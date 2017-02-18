@@ -7,6 +7,7 @@
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-env": "^1.1.8",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
@@ -19,6 +20,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
+    "flow-bin": "^0.39.0",
     "ignore-styles": "^5.0.1",
     "image-webpack-loader": "^3.2.0",
     "mocha": "^3.2.0",
@@ -38,6 +40,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --port 2000 --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "test": "mocha \"src/**/*.spec.jsx\""
+    "test": "mocha \"src/**/*.spec.jsx\"",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2"
   }
 }

@@ -1,0 +1,9 @@
+[ignore]
+.*node_modules/.*
+
+[libs]
+./interfaces/global.js
+
+[options]
+module.name_mapper='.*\(.scss\)' -> 'CSSModule'
+module.system=haste
