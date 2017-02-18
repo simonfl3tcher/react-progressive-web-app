@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.spec.jsx"]}]
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    // Disable `no-console` rule
+    "no-console": 0,
+    // Give a warning if identifiers contain underscores
+    "no-underscore-dangle": 1,
+    // Default to single quotes and raise an error if something
+    // else is used
+    "quotes": [2, "single"],
+     "max-len": [1, 80, 2, {ignoreComments: true}]
+  }
+}
