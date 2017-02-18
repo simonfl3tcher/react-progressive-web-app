@@ -1,6 +1,7 @@
 'use strict';
 
 require('webpack')
+var FlowtypePlugin = require('flowtype-loader/plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -23,7 +24,10 @@ module.exports = {
         enforce: 'pre',
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader'
+        use: [
+          'eslint-loader',
+          'flowtype'
+        ]
       },
       {
         test: /\.jsx?$/,
@@ -57,5 +61,8 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new FlowtypePlugin()
+  ]
 }

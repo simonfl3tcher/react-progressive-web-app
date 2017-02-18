@@ -21,6 +21,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "flow-bin": "^0.39.0",
+    "flowtype-loader": "^0.2.2",
     "ignore-styles": "^5.0.1",
     "image-webpack-loader": "^3.2.0",
     "mocha": "^3.2.0",
