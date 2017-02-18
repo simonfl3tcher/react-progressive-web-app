@@ -15,4 +15,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+selenium-debug.log
 
+tests_output/*
