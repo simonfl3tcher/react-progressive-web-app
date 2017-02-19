@@ -1,6 +1,6 @@
 'use strict';
 
-require('webpack')
+var webpack = require('webpack')
 var FlowtypePlugin = require('flowtype-loader/plugin');
 
 module.exports = {
@@ -35,7 +35,10 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           cacheDirectory: true,
-          presets: ['react', 'es2015']
+          presets: [
+            'react',
+            ['es2015', { "modules": false } ]
+          ]
         }
       },
       {
@@ -65,4 +68,19 @@ module.exports = {
   plugins: [
     new FlowtypePlugin()
   ]
+}
+
+if(process.env.NODE_ENV === 'production') {
+    module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ])
 }
