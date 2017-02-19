@@ -3,12 +3,15 @@
 // Dependencies
 import React from 'react';
 
+// CSS/Assets
+import './Home.scss';
+
 function Home() {
   return (
-    <div className="App">
-      <p className="App-intro">
-        Hello world
-      </p>
+    <div className="Home">
+      <div className="App-intro">
+        <h1>Welcome to React PWA</h1>
+      </div>
     </div>
   );
 }

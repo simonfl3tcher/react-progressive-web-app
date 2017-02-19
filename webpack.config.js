@@ -12,7 +12,7 @@ module.exports = {
     publicPath: '/public/assets'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', 'css', 'scss']
   },
   resolveLoader: {
     modules: ['node_modules', __dirname + '/client/node_modules'],
