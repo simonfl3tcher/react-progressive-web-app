@@ -5,17 +5,17 @@ import React from 'react';
 import { Link } from 'react-router';
 
 // CSS/Assets
-import './Home.scss';
+import './About.scss';
 
-function Home() {
+function About() {
   return (
-    <div className="Home">
+    <div className="About">
       <div className="App-intro">
-        <h1>Welcome to React PWA</h1>
-        <Link className="btn" to="/about">About</Link>
+        <h1>About React PWA</h1>
+        <Link className="btn" to="/">Home</Link>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default About;

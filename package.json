@@ -40,10 +40,11 @@
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --port 2000 --open --inline --hot",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --port 2000 --open --inline --hot --https true",
     "server:quite": "webpack-dev-server --port 2000 --quiet --no-info",
     "build": "cross-env NODE_ENV=production webpack -p --progress --hide-modules",
     "test": "mocha \"src/**/*.spec.jsx\"",

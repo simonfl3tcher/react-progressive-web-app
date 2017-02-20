@@ -9,10 +9,10 @@ import { shallow } from 'enzyme';
 import Home from './Home';
 
 describe('<Home />', () => {
-  it('should have the string \'Hello world\' ', () => {
+  it('should have the string \'Welcome to React PWA\' ', () => {
     const wrapper = shallow(<Home />);
     expect(
-      wrapper.contains('Hello world'),
+      wrapper.contains('Welcome to React PWA'),
     ).to.equal(true);
   });
 });
