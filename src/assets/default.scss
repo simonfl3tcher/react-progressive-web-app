@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: $base-text-align;
-  background-color: $brand;
+  background-color: $black;
 }
 
 body, input, textarea, button, select {
@@ -105,20 +105,6 @@ form.text.warn div.submit button span {
 form.text.warn div.submit button:hover span,
 form.text.warn div.submit button:focus span {
   color: $warn;
-}
-
-.section {
-  padding-top: 60px;
-  padding-bottom: 60px;
-
-  &.section-grey {
-    background-color: $brand-light-grey;
-  }
-}
-
-#site-contents {
-  display: block;
-  margin-top: 61px;
 }
 
 // Push
