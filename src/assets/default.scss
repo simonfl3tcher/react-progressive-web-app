@@ -13,49 +13,6 @@ body, input, textarea, button, select {
   -webkit-font-smoothing: antialiased; // NOTE: Keep an eye on this
 }
 
-p {
-  margin: 0 0 1em;
-}
-p:last-child {
-  margin-bottom: 0;
-}
-p em {
-  font-style: italic;
-}
-strong {
-  font-weight: $bold-weight;
-}
-.text-center {
-  text-align: center;
-}
-.text-brand {
-  color: $brand;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: $bold-weight;
-  line-height: 1.2;
-}
-h1 {
-  font-size: $type-sz-1;
-}
-h2 {
-  font-size: $type-sz-2;
-}
-h3 {
-  font-size: $type-sz-3;
-}
-h4 {
-  font-size: $type-sz-4;
-}
-h5 {
-  font-size: $type-sz-5;
-}
-h6 {
-  font-size: $type-sz-6;
-  font-weight: normal;
-}
-
 a,
 button,
 a:before,
@@ -63,78 +20,7 @@ a:after,
 form input[type=submit] {
   cursor: pointer;
 }
-button::-moz-focus-inner {
-  padding: 0;
-  border: none; // For FF 3.6
-}
-a, form.text div.submit button {
+a {
   color: $brand;
   text-decoration: none;
-}
-a:hover, a:focus,
-form.text:hover div.submit button span {
-  color: $brand;
-  // The underline can't be applied to <button> in FF 3.6, so we instead
-    // apply it to a non-semantic wrapper inside.
-}
-a:active {}
-a:visited {}
-input.placeholder, textarea.placeholder {
-  color: lighten($text, 40%);
-}
-input[disabled],
-button[disabled] {
-  cursor: pointer;
-  opacity: 0.5;
-    filter: alpha(opacity=50);
-}
-
-// Links > Text
-a.text{
-  color: $text;
-}
-a.text:hover,
-a.text:focus {
-  color: $brand;
-}
-
-// Links > Text > Warn
-form.text.warn div.submit button span {
-  color: $text;
-}
-form.text.warn div.submit button:hover span,
-form.text.warn div.submit button:focus span {
-  color: $warn;
-}
-
-// Push
-.pull-right {
-  float: right;
-  margin-left: $h-gutter;
-}
-.pull-left {
-  float: left;
-  margin-right: $h-gutter;
-}
-.push-top-half {
-  margin-top: $v-gutter/2;
-}
-.push-top {
-  margin-top: $v-gutter;
-}
-.push-top-double {
-  margin-top: $v-gutter*2;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #dce0e0;
-}
-
-.button.button-outline,
-button.button-outline,
-input[type='button'].button-outline,
-input[type='reset'].button-outline,
-input[type='submit'].button-outline {
-  border-color: $brand;
-  color: $brand;
 }

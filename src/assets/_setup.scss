@@ -1,24 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Cabin');
-
 $brand:               #61dafb;
 $black:               #2D2D2D;
-$warn:                #FF3B63;
-$text:                #b3b3b3;
 
 // Typography
 $base-text-align: left; // switch for rtl
-$sans-serif-stack: "Cabin", Helvetica, Arial, sans-serif;
+$sans-serif-stack: Helvetica, Arial, sans-serif;
 
 $base-font-size: 1.25em;
 $base-line-height: 1.5;
 $bold-weight: 600;
-
-$type-sz-1: 2em;
-$type-sz-2: 1.75em;
-$type-sz-3: 1.5em;
-$type-sz-4: 1.25em;
-$type-sz-5: 1.125em;
-$type-sz-6: 0.9em;
-
-$h-gutter: 1em;
-$v-gutter: 2em;

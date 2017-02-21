@@ -11,5 +11,10 @@
       letter-spacing: -0.035em;
       line-height: $base-line-height;
     }
+    > .btn {
+      background-color: #ffffff;
+      padding: 10px;
+      color: #2D2D2D;
+    }
   }
 }

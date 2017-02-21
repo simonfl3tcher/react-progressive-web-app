@@ -16,7 +16,16 @@
     <meta name="theme-color" content="#2D2D2D">
   </head>
   <body>
-    <div id="root"></div>
-    <script src="./public/assets/bundle.js"></script>
+    <div id="root">
+      <h1>Loading...</h1>
+    </div>
+    <script src="./public/assets/app.js" async></script>
+    <script>
+      (function() {
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/public/assets/react-pwa-service-worker.js');
+        }
+      })();
+    </script>
   </body>
 </html>

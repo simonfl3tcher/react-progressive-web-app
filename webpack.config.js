@@ -2,13 +2,16 @@
 
 var webpack = require('webpack')
 var FlowtypePlugin = require('flowtype-loader/plugin');
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/App.jsx',
+  entry: {
+    app: './src/App.jsx'
+  },
   output: {
     path: __dirname + '/public/assets',
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/public/assets'
   },
   resolve: {
@@ -25,8 +28,6 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [
-          'eslint-loader',
-          'flowtype'
         ]
       },
       {
@@ -66,7 +67,19 @@ module.exports = {
     ]
   },
   plugins: [
-    new FlowtypePlugin()
+    new FlowtypePlugin(),
+    new SWPrecacheWebpackPlugin(
+      {
+        cacheId: 'react-pwa',
+        filename: 'react-pwa-service-worker.js',
+        maximumFileSizeToCacheInBytes: 4194304,
+        minify: true,
+        runtimeCaching: [{
+          handler: 'cacheFirst',
+          urlPattern: /[.]js$/,
+        }],
+      }
+    ),
   ]
 }
 
