@@ -69,8 +69,9 @@ module.exports = {
   },
   plugins: [
     new FlowtypePlugin(),
-    new HtmlWebpackPlugin({template: './index.html'}),
-    new OfflinePlugin()
+    new OfflinePlugin({
+      externals: ['index.html']
+    })
   ]
 }
 
