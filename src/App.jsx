@@ -5,6 +5,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 
+require('offline-plugin/runtime').install();
+
 // CSS/Assets
 import './assets/default.scss';
 

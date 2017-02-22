@@ -3,6 +3,8 @@
 var webpack = require('webpack')
 var FlowtypePlugin = require('flowtype-loader/plugin');
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+var OfflinePlugin = require('offline-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -10,9 +12,9 @@ module.exports = {
     app: './src/App.jsx'
   },
   output: {
-    path: __dirname + '/public/assets',
+    path: __dirname + '/public/assets/',
     filename: '[name].js',
-    publicPath: '/public/assets'
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.jsx', 'css', 'scss']
@@ -76,10 +78,12 @@ module.exports = {
         minify: true,
         runtimeCaching: [{
           handler: 'cacheFirst',
-          urlPattern: /[.]js$/,
+          urlPattern: /[.]mp3/,
         }],
       }
     ),
+    new HtmlWebpackPlugin({template: './index.html'}),
+    new OfflinePlugin()
   ]
 }
 
