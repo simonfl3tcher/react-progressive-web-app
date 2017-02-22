@@ -2,7 +2,6 @@
 
 var webpack = require('webpack')
 var FlowtypePlugin = require('flowtype-loader/plugin');
-var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 var OfflinePlugin = require('offline-plugin');
 
@@ -12,8 +11,8 @@ module.exports = {
     app: './src/App.jsx'
   },
   output: {
-    path: __dirname + '/public/assets/',
-    filename: '[name].js',
+    path: __dirname + '/public/',
+    filename: 'assets/[name].js',
     publicPath: '/'
   },
   resolve: {
@@ -70,18 +69,6 @@ module.exports = {
   },
   plugins: [
     new FlowtypePlugin(),
-    new SWPrecacheWebpackPlugin(
-      {
-        cacheId: 'react-pwa',
-        filename: 'react-pwa-service-worker.js',
-        maximumFileSizeToCacheInBytes: 4194304,
-        minify: true,
-        runtimeCaching: [{
-          handler: 'cacheFirst',
-          urlPattern: /[.]mp3/,
-        }],
-      }
-    ),
     new HtmlWebpackPlugin({template: './index.html'}),
     new OfflinePlugin()
   ]

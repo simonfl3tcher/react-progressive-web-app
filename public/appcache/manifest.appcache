@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#ver:2/22/2017, 8:01:03 AM
+#plugin:4.6.1
+
+CACHE:
+/assets/0.js
+/assets/1.js
+/assets/2.js
+/assets/app.js
+/
+
+NETWORK:
+*
