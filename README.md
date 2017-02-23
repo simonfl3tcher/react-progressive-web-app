@@ -1,31 +1,29 @@
 ### React Progressive Web App Repo
 
-What is React PWA? It is an very opinionated react based repository which has been optimised for Progressive Web App development.
-In its current format, it will hit 100/100 when run through the [Lighthouse](https://developers.google.com/web/tools/lighthouse/) audit. You can
+What is React PWA? Well, it's a very opinionated React based repository which is optimized for Progressive Web App development. In its current format, it will hit around 95-100 out of 100 when running through the [Lighthouse](https://developers.google.com/web/tools/lighthouse/) audit. You can
 test this out by visiting the [demo](https://d103dzdze3hklu.cloudfront.net/#/) and generating a lighthouse report against it.
 
-There are many different ways to structure an application, this is the way that I tend to structure my applications. I think ultimately you could
-strip out the webpack.config.js file, tweak it slightly and then you will be on your merry way. But, you would still need to create a manifest, upload
-the images and make sure they are referenced correctly, that is why I decided to opensource this repo as it will allow you to just write React code without
-worrying about configuration.
+There are many different ways to structure an application; this repository is the way that I tend to structure my applications. I think you could strip out the `webpack.config.js` file, tweak it slightly and then you will be on your merry way. But, you would still need to create a manifest, upload the images and make sure they are referenced correctly, that is why I decided to open source this repo as it will allow you to just write React code without worrying about painful configuration.
 
 ### Opinions
 
-- The repo uses [Webpack 2](https://webpack.js.org/) - which makes use of tree shaking and also route based chunking.
+- It uses [Webpack 2](https://webpack.js.org/) - which makes use of tree shaking and also route based chunking.
 
-- The repo uses the `public` directory for webpack output. Within that it then have an `assets` directory which will hold the assets created by webpack but also the icons for the manifest.
+- It uses [Flow](https://flowtype.org/) - A static type checker for JavaScript. Although not that useful right now, moving forward in developing your app, it is there in your arsenal.
 
-- The repo has full separation of concerns around components, what does this mean? It means that all components, their assets and their tests are kept in the same folder. [Here](https://github.com/simonfl3tcher/react-pwa/tree/master/src/components/Home) is a good example of what I mean.
+- It uses the `public` directory for Webpack output. Within that, it then has an `assets` directory which will hold the assets created by Webpack but also the icons for the manifest.
 
-- The repo uses Mocha and Chai for it's testing framework, this could easily be switched out for something like [Jest](https://facebook.github.io/jest/) if desired.
+- It has full separation of concerns around components, what does this mean? It means that all components, their assets, and their tests are kept in the same folder. [Here](https://github.com/simonfl3tcher/react-pwa/tree/master/src/components/Home) is a good example of what I mean.
 
-- The repo comes with [Nightwatch](http://nightwatchjs.org/) as the standard e2e testing framework. I have tried multiple frameworks and found this is by the far the best at the moment.
+- It uses Mocha and Chai for its testing framework. Choosing Mocha and Chai was a conscious choice. However, this could easily be switched out for something like [Jest](https://facebook.github.io/jest/) if desired.
 
-- The repo uses [`offline-plugin` for webpack](https://github.com/NekR/offline-plugin). This was a concious decision. Originally, I wrote the caching myself but after debugging for a while it felt right to let something that made to handle that job to deal with that.
+- It comes with [Nightwatch](http://nightwatchjs.org/) as the standard e2e testing framework. I have tried multiple frameworks and found this is by far the best at the moment.
 
-- The repo uses route based chunking as outlined in point one, but this means that the react router implementation needs to be done with `getComponent`. You can see this [here](https://github.com/simonfl3tcher/react-pwa/blob/master/src/routes.jsx#L20).
+- It uses [`offline-plugin` for webpack](https://github.com/NekR/offline-plugin). Again, choosing `offline-plugin` was a conscious decision. Originally, I wrote the caching myself, but I felt that with open sourcing this repo, it needed to include a plugin that is actively being maintained and optimized for caching.
 
-Arguably, you could switch a lot of this out for your own approach, but then what would be the point in using a repo 😉 .
+- The repo uses route based chunking as outlined in point one, with this, it means that the react router implementation needs to be done with `getComponent`. You can see this [here](https://github.com/simonfl3tcher/react-pwa/blob/master/src/routes.jsx#L20).
+
+Arguably, you could switch a lot of this out for your approach, but then what would be the point in using an existing repo 😉.
 
 ### Installation
 
@@ -46,13 +44,13 @@ Please follow the following steps to get up and running.
   3. Run the e2e tests
 
     ```javascript
-    npm run nightwatch
+    npm run nightwatch FIXME: doesn't work.
     ```
 
   4. Run the static type checker
 
     ```javascript
-    npm run flow
+    npm run flow FIXME: doesn't work
     ```
 
   5. Start the webpack server
@@ -63,45 +61,47 @@ Please follow the following steps to get up and running.
 
 ### Maifest
 
-In order to make this PWA your own you need to change the [Manifest](https://github.com/simonfl3tcher/react-pwa/blob/master/public/manifest.json) information. Once you have updated this, you will be able to see the changes in the Application tab of your Dev tools.
+To make this PWA your own, you need to change the [Manifest](https://github.com/simonfl3tcher/react-pwa/blob/master/public/manifest.json) information. Once you have updated this, you will be able to see the changes you made in the Application tab of your Dev tools.
+
+![manifest.json screenshot](https://www.dropbox.com/s/r0jrhb58s69v5z8/Screenshot%202017-02-23%2018.42.56.png?dl=0)
 
 Finally, you will need to change the icons, at the moment there are just some default icons, in the [`public/assets/images/icons`](https://github.com/simonfl3tcher/react-pwa/tree/master/public/assets/images/icons) directory. It would be in your best interest to update these icons to be something more unique to your project.
 
 ### Hosting
 
-You can host this site anywhere you want really as long as you can secure it using an SSL. I personally went for hosting on AWS S3, with CloudFront. This
-will provide further server side caching which will mean even when you are online, the site loads super quick. I realise this is not for everyone, but for
-people where squeezing every last bit of page load out of a stone matters, I would highly recommend looking at AWS.
+You can host this site anywhere you want as long as it can be easily secured using SSL. I personally went for hosting on [AWS S3](https://aws.amazon.com/s3/), with [CloudFront](https://aws.amazon.com/cloudfront/). CloudFront
+will provide further caching which will mean even when you are online without a cache; the site will load super quick. I realize this is not for everyone, however, if you are going to be making changes regularly when you need to blow away the cache, I would highly recommend looking at [CloudFront](https://aws.amazon.com/cloudfront/).
 
-This repo is current a static based repo, I also aim to keep it that way. If you want to provide realtime information you can callout to an API using websockets
-or something similar. Adding something like Rails or Django is going to slow down the inital load time of pages, which will result in a down ranking of your PWA.
+[CloudFormation And Static Sites](https://serverlesscode.com/post/instant-static-site-cloudformation/) may help if you are unfamiliar with AWS.
 
-[CloudFormation And Static Sites](https://serverlesscode.com/post/instant-static-site-cloudformation/) may help if you are unfarmiliar with AWS.
+This repo is currently a static based repo; The aim is to keep it that way. If you want to provide dynamic information, you can call out to an API using something like [Axios](https://github.com/mzabriskie/axios). Eventually (although, not covered in this repo) you can implement the [Cache then network](https://jakearchibald.com/2014/offline-cookbook/#cache-then-network) approach, which would mean your app works with dynamic content on and offline.
+
 
 ### Lighthouse
 
-In order to see how your are getting on in your PWA endevour, I would strongly recommend [Lighthouse](https://developers.google.com/web/tools/lighthouse/).
-It gives you all the information that you need in order to hit the PWA targets. It is also backed by Google so you know that if you hit those targets, you 
+To see how you are getting on in your PWA endeavor, I would highly recommend [Lighthouse](https://developers.google.com/web/tools/lighthouse/).
+It gives you all the information that you need to hit the PWA targets. It is also a Google product, so you know that if you hit those targets, you
 are on to a winner.
 
 ### Caveats to success
 
-This repo is not a silver bullet (unless you keep it exactly as it is, which I doubt you are going to do). So as you make changes or add to your codebase you need to be aware of the things that may affect your Lighthouse score:
+This repo is not a silver bullet (unless you keep it exactly as it is, which I doubt you are going to do). So, as you make changes or add to your codebase you need to be aware of the things that may affect your Lighthouse score:
 
-- CSS Rules
-- HTTPS
-- JavaScript caching
+- CSS Rules - You need to make sure that you do not add "unused rules" to your stylesheets. This will reduce unnecessary bytes consumed by network activity.
+- HTTPS - You need to make sure that when you deploy the application that it is using HTTPS and redirecting HTTP traffic to HTTPS.
+- JavaScript libraries - these are a sure-fire way to increase your load time, make sure you fully evaluate if you need the library before adding.
+
+Again, most of this stuff is covered by Lighthouse, so if you regularly check it, you will soon find out if your app is going down the wrong track.
 
 ### TODO:
 
 Some things that are not currently covered in the repo.
 
 - [ ] Push notification support
-- [ ] External caching
+- [ ] External API caching
 - [ ] Image asset support
 
 ### Demo
 
 Vist [https://d103dzdze3hklu.cloudfront.net/#/](https://d103dzdze3hklu.cloudfront.net/#/) to see a demo in action.
-You should also visit this on your phone and add to your homescreen, it will allow you to get a feel for how it works
-on a phone and the differences between a native app and a progressive web app.
+You should also visit this on your phone and add to your home screen; it will allow you to get a feel for how it works on a phone.

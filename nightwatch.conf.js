@@ -12,7 +12,7 @@ const CHROME_CONFIGURATION = {
 };
 
 const DEFAULT_CONFIGURATION = {
-  launch_url: 'http://localhost:2000',
+  launch_url: 'http://localhost:2000/',
   selenium_port: 4444,
   selenium_host: 'localhost',
   silent: true,
