@@ -2,7 +2,6 @@
 
 var webpack = require('webpack')
 var FlowtypePlugin = require('flowtype-loader/plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 var OfflinePlugin = require('offline-plugin');
 
 module.exports = {
