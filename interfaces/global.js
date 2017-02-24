@@ -4,6 +4,17 @@ declare module CSSModule {
   declare var exports: { [key: string]: string };
 }
 
+declare module OfflinePlugin {
+  declare function install(): any;
+}
+
+declare interface System {
+    static import: (module: string) => Promise<{
+        default: any,
+        inc: number,
+    }>
+};
+
 declare module 'react-router' {
   declare interface ReactRouter extends React.Component<*, *, *> {
     IndexRoute: React.Component<*, *, *>;

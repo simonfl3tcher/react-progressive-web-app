@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+flow-typed
 
 # testing
 /coverage
@@ -11,10 +12,7 @@
 
 # misc
 .DS_Store
-.env
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 selenium-debug.log
 
 tests_output/*

@@ -6,4 +6,6 @@
 
 [options]
 module.name_mapper='.*\(.scss\)' -> 'CSSModule'
+module.name_mapper='offline-plugin/runtime' -> 'OfflinePlugin'
+module.name_mapper='System' -> 'System'
 module.system=haste
