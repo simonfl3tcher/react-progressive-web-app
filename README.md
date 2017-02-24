@@ -62,7 +62,7 @@ Please follow the following steps to get up and running.
 
 To make this PWA your own, you need to change the [Manifest](https://github.com/simonfl3tcher/react-pwa/blob/master/public/manifest.json) information. Once you have updated this, you will be able to see the changes you made in the Application tab of your Dev tools.
 
-![manifest.json screenshot](https://www.dropbox.com/s/r0jrhb58s69v5z8/Screenshot%202017-02-23%2018.42.56.png?dl=0)
+![manifest.json screenshot](https://s3-eu-west-1.amazonaws.com/simonfl3tcher-github-image/Screenshot+2017-02-23+18.42.56.png)
 
 Finally, you will need to change the icons, at the moment there are just some default icons, in the [`public/assets/images/icons`](https://github.com/simonfl3tcher/react-pwa/tree/master/public/assets/images/icons) directory. It would be in your best interest to update these icons to be something more unique to your project.
 
