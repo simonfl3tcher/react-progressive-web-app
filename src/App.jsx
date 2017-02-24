@@ -5,10 +5,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
 
-require('offline-plugin/runtime').install();
-
 // CSS/Assets
 import './assets/default.scss';
+
+require('offline-plugin/runtime').install();
 
 function errorLoading(err) {
   console.error('Dynamic page loading failed', err);
@@ -24,19 +24,25 @@ function App() {
       <Route
         path="/"
         getComponent={(location, cb) => {
-          System.import('./components/Home/Home').then(loadRoute(cb)).catch(errorLoading);
+          System.import('./components/Home/Home')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
         }}
       />
       <Route
         path="/about"
         getComponent={(location, cb) => {
-          System.import('./components/About/About').then(loadRoute(cb)).catch(errorLoading);
+          System.import('./components/About/About')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
         }}
       />
       <Route
         path="*"
         getComponent={(location, cb) => {
-          System.import('./components/NotFound/NotFound').then(loadRoute(cb)).catch(errorLoading);
+          System.import('./components/NotFound/NotFound')
+            .then(loadRoute(cb))
+            .catch(errorLoading);
         }}
       />
     </Router>

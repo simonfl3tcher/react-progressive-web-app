@@ -1,21 +1,20 @@
 ### React Progressive Web App Repo
 
-What is React PWA? Well, it's a very opinionated React based repository which is optimized for Progressive Web App development. In its current format, it will hit around 95-100 out of 100 when running through the [Lighthouse](https://developers.google.com/web/tools/lighthouse/) audit. You can
-test this out by visiting the [demo](https://d103dzdze3hklu.cloudfront.net/#/) and generating a lighthouse report against it.
+What is this repo? Well, it's a very opinionated React based repository which is optimized for Progressive Web App development. In its current format, it will hit around 95-100 out of 100 when running through the [Lighthouse](https://developers.google.com/web/tools/lighthouse/) audit. You can test this out by visiting the [demo](https://d103dzdze3hklu.cloudfront.net/#/) and generating a lighthouse report against it.
 
-There are many different ways to structure an application; this repository is the way that I tend to structure my applications. I think you could strip out the `webpack.config.js` file, tweak it slightly and then you will be on your merry way. But, you would still need to create a manifest, upload the images and make sure they are referenced correctly, that is why I decided to open source this repo as it will allow you to just write React code without worrying about painful configuration.
+There are many different ways to structure an application; this repository is the way that I tend to structure my applications. I think, you could strip out the `webpack.config.js` file, tweak it slightly and then you will be on your merry way. But, you would still need to create a manifest, upload the images and make sure they are referenced correctly, that is why I decided to open source this repo as it will allow you to just write React code without worrying about painful configuration.
 
 ### Opinions
 
-- It uses [Webpack 2](https://webpack.js.org/) - which makes use of tree shaking and also route based chunking.
+- It uses [Webpack 2](https://webpack.js.org/) - which makes use of tree shaking and route based chunking.
 
-- It uses [Flow](https://flowtype.org/) - A static type checker for JavaScript. Although not that useful right now, moving forward in developing your app, it is there in your arsenal.
+- It uses [Flow](https://flowtype.org/) - A static type checker for JavaScript. Although not that useful right now, moving forward in developing your app, it is there to proctect you.
 
 - It uses the `public` directory for Webpack output. Within that, it then has an `assets` directory which will hold the assets created by Webpack but also the icons for the manifest.
 
 - It has full separation of concerns around components, what does this mean? It means that all components, their assets, and their tests are kept in the same folder. [Here](https://github.com/simonfl3tcher/react-pwa/tree/master/src/components/Home) is a good example of what I mean.
 
-- It uses Mocha and Chai for its testing framework. Choosing Mocha and Chai was a conscious choice. However, this could easily be switched out for something like [Jest](https://facebook.github.io/jest/) if desired.
+- It uses Mocha and Chai for its testing framework. Choosing Mocha and Chai was a conscious decision. However, this could easily be switched out for something like [Jest](https://facebook.github.io/jest/) if desired.
 
 - It comes with [Nightwatch](http://nightwatchjs.org/) as the standard e2e testing framework. I have tried multiple frameworks and found this is by far the best at the moment.
 
@@ -44,13 +43,13 @@ Please follow the following steps to get up and running.
   3. Run the e2e tests
 
     ```javascript
-    npm run nightwatch FIXME: doesn't work.
+    npm run nightwatch
     ```
 
   4. Run the static type checker
 
     ```javascript
-    npm run flow FIXME: doesn't work
+    npm run flow
     ```
 
   5. Start the webpack server
@@ -69,12 +68,11 @@ Finally, you will need to change the icons, at the moment there are just some de
 
 ### Hosting
 
-You can host this site anywhere you want as long as it can be easily secured using SSL. I personally went for hosting on [AWS S3](https://aws.amazon.com/s3/), with [CloudFront](https://aws.amazon.com/cloudfront/). CloudFront
-will provide further caching which will mean even when you are online without a cache; the site will load super quick. I realize this is not for everyone, however, if you are going to be making changes regularly when you need to blow away the cache, I would highly recommend looking at [CloudFront](https://aws.amazon.com/cloudfront/).
+You can host this site anywhere you want as long as it can be easily secured using SSL. I personally went for hosting on [AWS S3](https://aws.amazon.com/s3/), with [CloudFront](https://aws.amazon.com/cloudfront/). CloudFront will provide further caching which will mean even when you are online without a cache storage; the site will load super quick. I realize this is not for everyone, however, if you are going to be making changes regularly and you need to blow away the cache storage, I would highly recommend looking at [CloudFront](https://aws.amazon.com/cloudfront/).
 
 [CloudFormation And Static Sites](https://serverlesscode.com/post/instant-static-site-cloudformation/) may help if you are unfamiliar with AWS.
 
-This repo is currently a static based repo; The aim is to keep it that way. If you want to provide dynamic information, you can call out to an API using something like [Axios](https://github.com/mzabriskie/axios). Eventually (although, not covered in this repo) you can implement the [Cache then network](https://jakearchibald.com/2014/offline-cookbook/#cache-then-network) approach, which would mean your app works with dynamic content on and offline.
+This repo is currently a static based repo; the aim is to keep it that way. If you want to provide dynamic information, you can call out to an API using something like [Axios](https://github.com/mzabriskie/axios). Eventually (although, not covered in this repo) you can implement the [Cache then network](https://jakearchibald.com/2014/offline-cookbook/#cache-then-network) approach, which would mean your app works with dynamic content on and offline.
 
 
 ### Lighthouse
@@ -98,7 +96,7 @@ Again, most of this stuff is covered by Lighthouse, so if you regularly check it
 Some things that are not currently covered in the repo.
 
 - [ ] Push notification support
-- [ ] External API caching
+- [ ] Cache then network
 - [ ] Image asset support
 
 ### Demo

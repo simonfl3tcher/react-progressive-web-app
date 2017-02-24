@@ -1,3 +1,4 @@
+/*eslint-disable */
 'use strict';
 
 var webpack = require('webpack')
@@ -28,6 +29,8 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [
+          'eslint-loader',
+          'flowtype'
         ]
       },
       {

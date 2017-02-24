@@ -48,7 +48,7 @@
   },
   "scripts": {
     "server": "cross-env NODE_ENV=development webpack-dev-server --port 2000 --open --inline --hot --content-base public",
-    "server:quite": "webpack-dev-server --port 2000 --quiet --no-info",
+    "server:quite": "NODE_ENV=development webpack-dev-server --port 2000 --quiet --no-info --content-base public",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "mocha \"src/**/*.spec.jsx\"",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",

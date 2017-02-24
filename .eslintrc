@@ -17,6 +17,6 @@
     // Default to single quotes and raise an error if something
     // else is used
     "quotes": [2, "single"],
-     "max-len": [1, 80, 2, {ignoreComments: true}]
+    "max-len": [1, 80, 2, {ignoreComments: true}]
   }
 }

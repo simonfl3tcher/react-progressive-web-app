@@ -15,4 +15,4 @@ flow-typed
 npm-debug.log*
 selenium-debug.log
 
-tests_output/*
+test/specs/e2e/tests_output/*
