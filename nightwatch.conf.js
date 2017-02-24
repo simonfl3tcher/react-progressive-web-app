@@ -2,7 +2,7 @@
 
 const SELENIUM_CONFIGURATION = {
   start_process: true,
-  server_path: './node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.0.1.jar',
+  server_path: './node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.1.0.jar',
   host: '127.0.0.1',
   port: 4444,
 };

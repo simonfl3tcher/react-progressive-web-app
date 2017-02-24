@@ -32,7 +32,7 @@
     "react-addons-test-utils": "^15.4.2",
     "react-scripts": "0.9.0",
     "sass-loader": "^6.0.1",
-    "selenium-server-standalone-jar": "^3.0.1",
+    "selenium-server-standalone-jar": "3.1.0",
     "sinon": "^1.17.7",
     "style-loader": "^0.13.1",
     "sw-precache-webpack-plugin": "^0.9.0",
