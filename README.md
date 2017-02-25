@@ -106,7 +106,7 @@ You should also visit this on your phone and add to your home screen; it will al
 
 ### Contributions
 
-Contributions are very welcome! If you found a bug or some improvments, feel free to raise an issue and send a PR!
+Contributions are very welcome! If you found a bug or some improvments, feel free to raise an issue and send a PR! Please see the [CONTRIBUTING](https://github.com/simonfl3tcher/react-progressive-web-app/blob/master/CONTRIBUTING.md) file for more information on how to contribute.
 
 ### License
 
