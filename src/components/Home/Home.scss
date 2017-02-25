@@ -3,7 +3,7 @@
 .Home {
   text-align: center;
   .App-intro {
-    margin-top: 15em;
+    margin-top: 10em;
     > h1 {
       color: $brand;
       font-size: $base-font-size*3;
@@ -12,9 +12,14 @@
       line-height: $base-line-height;
     }
     > .btn {
-      background-color: #ffffff;
+      background-color: #FFFFFF;
       padding: 10px;
       color: #2D2D2D;
+    }
+    > .logo {
+      animation: Header-logo-spin infinite 20s linear;
+      height: 150px;
+      fill: #FFFFFF;
     }
   }
 }

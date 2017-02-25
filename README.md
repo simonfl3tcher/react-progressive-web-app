@@ -97,7 +97,6 @@ Some things that are not currently covered in the repo.
 
 - [ ] Push notification support
 - [ ] Cache then network
-- [ ] Image asset support
 
 ### Demo
 

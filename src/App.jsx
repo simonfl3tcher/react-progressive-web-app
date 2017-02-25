@@ -10,44 +10,37 @@ import './assets/default.scss';
 
 require('offline-plugin/runtime').install();
 
-function errorLoading(err) {
-  console.error('Dynamic page loading failed', err);
-}
+const errorLoading = err => console.error('Dynamic page loading failed', err);
+const loadRoute = cb => module => cb(null, module.default);
 
-function loadRoute(cb) {
-  return module => cb(null, module.default);
-}
-
-function App() {
-  return (
-    <Router history={hashHistory}>
-      <Route
-        path="/"
-        getComponent={(location, cb) => {
-          System.import('./components/Home/Home')
-            .then(loadRoute(cb))
-            .catch(errorLoading);
-        }}
-      />
-      <Route
-        path="/about"
-        getComponent={(location, cb) => {
-          System.import('./components/About/About')
-            .then(loadRoute(cb))
-            .catch(errorLoading);
-        }}
-      />
-      <Route
-        path="*"
-        getComponent={(location, cb) => {
-          System.import('./components/NotFound/NotFound')
-            .then(loadRoute(cb))
-            .catch(errorLoading);
-        }}
-      />
-    </Router>
-  );
-}
+const App = () => (
+  <Router history={hashHistory}>
+    <Route
+      path="/"
+      getComponent={(location, cb) => {
+        System.import('./components/Home/Home')
+          .then(loadRoute(cb))
+          .catch(errorLoading);
+      }}
+    />
+    <Route
+      path="/about"
+      getComponent={(location, cb) => {
+        System.import('./components/About/About')
+          .then(loadRoute(cb))
+          .catch(errorLoading);
+      }}
+    />
+    <Route
+      path="*"
+      getComponent={(location, cb) => {
+        System.import('./components/NotFound/NotFound')
+          .then(loadRoute(cb))
+          .catch(errorLoading);
+      }}
+    />
+  </Router>
+);
 
 ReactDOM.render(
   <App />,

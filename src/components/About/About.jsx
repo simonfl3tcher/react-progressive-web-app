@@ -7,15 +7,13 @@ import { Link } from 'react-router';
 // CSS/Assets
 import './About.scss';
 
-function About() {
-  return (
-    <div className="About">
-      <div className="App-intro">
-        <h1>About React PWA</h1>
-        <Link className="btn" to="/">Home</Link>
-      </div>
+const About = () => (
+  <div className="About">
+    <div className="App-intro">
+      <h1>About React PWA</h1>
+      <Link className="btn" to="/">Home</Link>
     </div>
-  );
-}
+  </div>
+);
 
 export default About;

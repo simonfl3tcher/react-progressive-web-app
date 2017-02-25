@@ -8,7 +8,9 @@ flow-typed
 /coverage
 
 # production
-/build
+/public/assets/*.js
+/public/sw.js
+/public/assets/images/*..(jpe?g|png|gif|svg)
 
 # misc
 .DS_Store
