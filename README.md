@@ -93,12 +93,21 @@ Again, most of this stuff is covered by Lighthouse, so if you regularly check it
 
 ### TODO:
 
-Some things that are not currently covered in the repo. Contributions are more than welcome 😍.
+Some things that are not currently covered in the repo.
 
 - [ ] Push notification support
-- [ ] Cache then network
+- [ ] Cache then network support
+- [ ] Background Sync support
 
 ### Demo
 
 Vist [https://d103dzdze3hklu.cloudfront.net/#/](https://d103dzdze3hklu.cloudfront.net/#/) to see a demo in action.
 You should also visit this on your phone and add to your home screen; it will allow you to get a feel for how it works on a phone.
+
+### Contributions
+
+Contributions are very welcome! If you found a bug or some improvments, feel free to raise an issue and send a PR!
+
+### License
+
+MIT
