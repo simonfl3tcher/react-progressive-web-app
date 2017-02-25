@@ -12,7 +12,7 @@ There are many different ways to structure an application; this repository is th
 
 - It uses the `public` directory for Webpack output. Within that, it then has an `assets` directory which will hold the assets created by Webpack but also the icons for the manifest.
 
-- It has full separation of concerns around components, what does this mean? It means that all components, their assets, and their tests are kept in the same folder. [Here](https://github.com/simonfl3tcher/react-progressive-web-app-repo/tree/master/src/components/Home) is a good example of what I mean.
+- It has full separation of concerns around components, what does this mean? It means that all components, their assets, and their tests are kept in the same folder. [Here](https://github.com/simonfl3tcher/react-progressive-web-app/tree/master/src/components/Home) is a good example of what I mean.
 
 - It uses Mocha and Chai for its testing framework. Choosing Mocha and Chai was a conscious decision. However, this could easily be switched out for something like [Jest](https://facebook.github.io/jest/) if desired.
 
@@ -20,7 +20,7 @@ There are many different ways to structure an application; this repository is th
 
 - It uses [`offline-plugin` for webpack](https://github.com/NekR/offline-plugin). Again, choosing `offline-plugin` was a conscious decision. Originally, I wrote the caching myself, but I felt that with open sourcing this repo, it needed to include a plugin that is actively being maintained and optimized for caching.
 
-- The repo uses route based chunking as outlined in point one, with this, it means that the react router implementation needs to be done with `getComponent`. You can see this [here](https://github.com/simonfl3tcher/react-progressive-web-app-repo/blob/master/src/routes.jsx#L20).
+- The repo uses route based chunking as outlined in point one, with this, it means that the react router implementation needs to be done with `getComponent`. You can see this [here](https://github.com/simonfl3tcher/react-progressive-web-app/blob/master/src/routes.jsx#L20).
 
 Arguably, you could switch a lot of this out for your approach, but then what would be the point in using an existing repo 😉.
 
@@ -60,11 +60,11 @@ Please follow the following steps to get up and running.
 
 ### Maifest
 
-To make this PWA your own, you need to change the [Manifest](https://github.com/simonfl3tcher/react-progressive-web-app-repo/blob/master/public/manifest.json) information. Once you have updated this, you will be able to see the changes you made in the Application tab of your Dev tools.
+To make this PWA your own, you need to change the [Manifest](https://github.com/simonfl3tcher/react-progressive-web-app/blob/master/public/manifest.json) information. Once you have updated this, you will be able to see the changes you made in the Application tab of your Dev tools.
 
 ![manifest.json screenshot](https://s3-eu-west-1.amazonaws.com/simonfl3tcher-github-image/Screenshot+2017-02-23+18.42.56.png)
 
-Finally, you will need to change the icons, at the moment there are just some default icons, in the [`public/assets/images/icons`](https://github.com/simonfl3tcher/react-progressive-web-app-repo/tree/master/public/assets/images/icons) directory. It would be in your best interest to update these icons to be something more unique to your project.
+Finally, you will need to change the icons, at the moment there are just some default icons, in the [`public/assets/images/icons`](https://github.com/simonfl3tcher/react-progressive-web-app/tree/master/public/assets/images/icons) directory. It would be in your best interest to update these icons to be something more unique to your project.
 
 ### Hosting
 
