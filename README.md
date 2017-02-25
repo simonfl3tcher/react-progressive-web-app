@@ -1,4 +1,4 @@
-### React Progressive Web App Repo
+### React Progressive Web App
 
 What is this repo? Well, it's a very opinionated React based repository which is optimized for Progressive Web App development. In its current format, it will hit around 95-100 out of 100 when running through the [Lighthouse](https://developers.google.com/web/tools/lighthouse/) audit. You can test this out by visiting the [demo](https://d103dzdze3hklu.cloudfront.net/#/) and generating a lighthouse report against it.
 
