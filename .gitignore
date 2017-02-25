@@ -10,7 +10,11 @@ flow-typed
 # production
 /public/assets/*.js
 /public/sw.js
-/public/assets/images/*..(jpe?g|png|gif|svg)
+/public/assets/images/*.svg
+/public/assets/images/*.gif
+/public/assets/images/*.png
+/public/assets/images/*.jpg
+/public/assets/images/*.jpeg
 
 # misc
 .DS_Store

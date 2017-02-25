@@ -93,7 +93,7 @@ Again, most of this stuff is covered by Lighthouse, so if you regularly check it
 
 ### TODO:
 
-Some things that are not currently covered in the repo.
+Some things that are not currently covered in the repo. Contributions are more than welcome 😍.
 
 - [ ] Push notification support
 - [ ] Cache then network
