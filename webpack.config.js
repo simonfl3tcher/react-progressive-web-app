@@ -4,16 +4,22 @@
 var webpack = require('webpack')
 var FlowtypePlugin = require('flowtype-loader/plugin');
 var OfflinePlugin = require('offline-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
   entry: {
-    app: './src/App.jsx'
+    app: './src/App.jsx',
+    vendor: [
+      'react',
+      'react-dom',
+      'react-router'
+    ]
   },
   output: {
     path: __dirname + '/public/',
-    filename: 'assets/[name].js',
-    publicPath: '/'
+    filename: 'assets/[name].[hash].js',
+    publicPath: './'
   },
   resolve: {
     extensions: ['.js', '.jsx', 'css', 'scss']
@@ -34,16 +40,20 @@ module.exports = {
         ]
       },
       {
-        test: /\.jsx?$/,
-        loaders: 'babel-loader',
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        query: {
-          cacheDirectory: true,
-          presets: [
-            'react',
-            ['es2015', { "modules": false } ]
-          ]
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              presets: [
+                'react',
+                ['es2015', { "modules": false } ]
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
@@ -97,9 +107,25 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'assets/vendor.js',
+      minChunks: Infinity
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'meta', chunks: ['vendor'], filename: 'assets/meta.[hash].js' }),
     new FlowtypePlugin(),
     new OfflinePlugin({
-      externals: ['index.html']
+      externals: ['index.html'],
+      AppCache: false
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Welcome to React PWA',
+      filename: 'index.html',
+      template: 'public/index.ejs',
+      hash: true,
+      excludeChunks: 'appcache/manifest.appcache',
+      inject: 'body'
     })
   ]
 }
