@@ -53,6 +53,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "mocha \"src/**/*.spec.jsx\"",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
-    "nightwatch": "./bin/boot-nightwatch.sh"
+    "nightwatch": "npm run build && ./bin/boot-nightwatch.sh"
   }
 }
