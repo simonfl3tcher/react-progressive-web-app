@@ -8,7 +8,7 @@ There are many different ways to structure an application; this repository is th
 
 - It uses [Webpack 2](https://webpack.js.org/) - which makes use of tree shaking and route based chunking.
 
-- It uses [Flow](https://flowtype.org/) - A static type checker for JavaScript. Although not that useful right now, moving forward in developing your app, it is there to proctect you.
+- It uses [Flow](https://flowtype.org/) - A static type checker for JavaScript. Although not that useful right now, moving forward in developing your app, it is there to protect you.
 
 - It uses the `public` directory for Webpack output. Within that, it then has an `assets` directory which will hold the assets created by Webpack but also the icons for the manifest.
 
@@ -106,7 +106,7 @@ You should also visit this on your phone and add to your home screen; it will al
 
 ### Contributions
 
-Contributions are very welcome! If you found a bug or some improvments, feel free to raise an issue and send a PR! Please see the [CONTRIBUTING](https://github.com/simonfl3tcher/react-progressive-web-app/blob/master/CONTRIBUTING.md) file for more information on how to contribute.
+Contributions are very welcome! If you found a bug or some improvements, feel free to raise an issue and send a PR! Please see the [CONTRIBUTING](https://github.com/simonfl3tcher/react-progressive-web-app/blob/master/CONTRIBUTING.md) file for more information on how to contribute.
 
 ### License
 
