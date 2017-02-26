@@ -20,7 +20,7 @@ There are many different ways to structure an application; this repository is th
 
 - It uses [`offline-plugin` for webpack](https://github.com/NekR/offline-plugin). Again, choosing `offline-plugin` was a conscious decision. Originally, I wrote the caching myself, but I felt that with open sourcing this repo, it needed to include a plugin that is actively being maintained and optimized for caching.
 
-- The repo uses route based chunking as outlined in point one, with this, it means that the react router implementation needs to be done with `getComponent`. You can see this [here](https://github.com/simonfl3tcher/react-progressive-web-app/blob/master/src/routes.jsx#L20).
+- The repo uses route based chunking as outlined in point one, with this, it means that the react router implementation needs to be done with `getComponent`. You can see this [here](https://github.com/simonfl3tcher/react-progressive-web-app/blob/master/src/App.jsx#L17).
 
 Arguably, you could switch a lot of this out for your approach, but then what would be the point in using an existing repo 😉.
 
