@@ -58,7 +58,7 @@ Please follow the following steps to get up and running.
     npm run server
     ```
 
-### Maifest
+### Manifest
 
 To make this PWA your own, you need to change the [Manifest](https://github.com/simonfl3tcher/react-progressive-web-app/blob/master/public/manifest.json) information. Once you have updated this, you will be able to see the changes you made in the Application tab of your Dev tools.
 
