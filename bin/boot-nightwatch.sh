@@ -39,7 +39,7 @@ if is_port_alive; then
   print_state "webpack server running"
   RUN_NIGHTWATCH=1
 else
-  npm run server:quite & APP_SERVER=$!
+  npm run server:quiet & APP_SERVER=$!
   sleep 1
   print_state "Waiting for webpack to boot"
   check_for_port_to_be_in_use
